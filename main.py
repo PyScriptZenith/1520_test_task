@@ -28,10 +28,10 @@ class Car:
 
 
 class Toyota(Car):
-    def __init__(self, price):
-        super().__init__(price)
-        self.lifespan = timedelta(days=365 * 2)
-
+    def __init__(self, price, creation_time=None, lifespan=None):
+        super().__init__(price, creation_time, lifespan)
+        if lifespan is None:
+            self.lifespan = timedelta(days=365 * 2)
 
 car1 = Car(2000000)
 toyota1 = Toyota(2000000)
